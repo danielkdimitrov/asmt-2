@@ -16,7 +16,13 @@
 <h3 class="date">Numerical Simulation, Assignment 2</h3>
 </div>
 <h1 id="introduction">Introduction</h1>
-<p>The Bownian Motion, also known as a Wiener process, is a foundational block in quantitative finance. It is used extensively for pricing of derivative products, risk management and Hedging, Portfolio Construvtion</p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left">Bownian Motion, also known as a Wiener process, is a foundational block in quantitative finance. It is used extensively for pricing of derivative products, risk management and Hedging, Portfolio Construvtion</td>
+</tr>
+</tbody>
+</table>
 <h2 id="definition">Definition</h2>
 <p>A <em>Wiener process</em> <span class="math inline"><em>W</em><sub><em>t</em></sub></span> in continous time satisfes the following properties for <span class="math inline"><em>t</em> ≥ 0</span>.</p>
 <ol style="list-style-type: lower-roman">
@@ -25,10 +31,11 @@
 <li><p>For any given <span class="math inline"><em>t</em><sub>1</sub></span> and <span class="math inline"><em>t</em><sub>2</sub></span> with <span class="math inline"><em>t</em><sub>2</sub> &gt; <em>t</em><sub>1</sub></span>, the increment <span class="math inline"><em>W</em><sub><em>t</em><sub>2</sub></sub> − <em>W</em><sub><em>t</em><sub>1</sub></sub></span> is normally distributed with mean <span class="math inline">0</span> and variance <span class="math inline"><em>t</em><sub>2</sub> − <em>t</em><sub>1</sub></span>.</p></li>
 </ol>
 <p>Details are available in the course script Financial Models by Prof. Dr. J.M.Schumacher.</p>
-<h1 id="assignment-a">Assignment A</h1>
-<h2 id="simulations">Simulations</h2>
-<p>Plot two sample paths of a discrete-time standard random walk. That is, plot two trajectories of the process defned by the recursion <span class="math inline"><em>X</em><sub><em>k</em></sub> + 1 = <em>X</em><sub><em>k</em></sub> + <em>Z</em><sub><em>k</em></sub></span> where <span class="math inline"><em>X</em><sub>0</sub> = 0</span> and the <span class="math inline"><em>Z</em><sub><em>k</em></sub></span>'s are independent standard normal variables. Take 200 steps.</p>
-<h2 id="solution-matlab-code">Solution MATLAB Code</h2>
+<hr />
+<h1 id="assignment-part-a">Assignment Part A</h1>
+<h2 id="problem">Problem:</h2>
+<p>Plot two sample paths of a discrete-time standard random walk. That is, plot two trajectories of the process defned by the recursion <span class="math inline"><em>X</em><sub><em>k</em> + 1</sub> = <em>X</em><sub><em>k</em></sub> + <em>Z</em><sub><em>k</em></sub></span> where <span class="math inline"><em>X</em><sub>0</sub> = 0</span> and the <span class="math inline"><em>Z</em><sub><em>k</em></sub></span>'s are independent standard normal variables. Take 200 steps.</p>
+<h2 id="solution-matlab-code">Solution MATLAB Code:</h2>
 <p>The MATLab function <span class="math inline"><em>c</em><em>u</em><em>m</em><em>s</em><em>u</em><em>m</em></span> is used which helps avoid generating a time loop. The code is provided below.</p>
 <pre><code>N=200; %number of steps
 %initial values for the paths
@@ -47,24 +54,24 @@ plot([0:1:200],path1)
 plot([0:1:200],path2,&#39;r&#39;)
 xlabel(&#39;Steps&#39;)
 legend(&#39;path1&#39;,&#39;path2&#39;)</code></pre>
-<h2 id="solution-graph">Solution Graph</h2>
+<h2 id="solution-graph">Solution Graph:</h2>
 <p>The output graph is provided below</p>
 <div class="figure">
 <img src="images/asmtA_Brownian.jpg" />
 
 </div>
-<h1 id="assignment-b">Assignment B</h1>
-<h2 id="problem">Problem</h2>
+<hr />
+<h1 id="assignment-part-b">Assignment Part B</h1>
+<h2 id="problem-1">Problem:</h2>
 <p>Let <span class="math inline"><em>W</em><sub><em>t</em></sub></span> be a Wiener process. Show that</p>
 <p><br /><span class="math display"><em>c</em><em>o</em><em>v</em>(<em>W</em><sub><em>t</em><sub>1</sub></sub>; <em>W</em><sub><em>t</em><sub>2</sub></sub>)=<em>m</em><em>i</em><em>n</em>(<em>t</em><sub>1</sub>; <em>t</em><sub>2</sub>)</span><br /></p>
 <p>For every step in your reasoning, indicate which property of the Wiener process you use.</p>
-<h2 id="solution">Solution</h2>
+<h2 id="solution">Solution:</h2>
 <p>Assume that <span class="math inline"><em>t</em><sub>0</sub> &lt; <em>t</em><sub>1</sub> &lt; <em>t</em><sub>2</sub></span> where <span class="math inline"><em>t</em><sub>0</sub> = 0</span>. Then we can consider <span class="math inline"><em>W</em><sub><em>t</em><sub>1</sub></sub> = <em>W</em><sub><em>t</em><sub>1</sub></sub> − <em>W</em><sub><em>t</em><sub>0</sub></sub></span> and <span class="math inline"><em>W</em><sub><em>t</em><sub>2</sub></sub></span> as <span class="math inline"><em>W</em><sub><em>t</em><sub>2</sub></sub> = (<em>W</em><sub><em>t</em><sub>1</sub></sub> − <em>W</em><sub><em>t</em><sub>0</sub></sub>)+(<em>W</em><sub><em>t</em><sub>2</sub></sub> − <em>W</em><sub><em>t</em><sub>1</sub></sub>)</span> where <span class="math inline"><em>W</em><sub><em>t</em><sub>0</sub></sub> = 0</span> from property (i) of a Wiener process.</p>
-<p>We wrote each of the random variables of the process as an increment. Those increments are independent (ii) and normally distributed (iii), with zero mean and variance that is equal to the time interval between the two random variables. So, if <span class="math inline"><em>W</em><sub><em>t</em><sub>0</sub></sub> = 0</span>,</p>
-<p><br /><span class="math display"><em>W</em><sub><em>t</em><sub>1</sub></sub> ∼ <em>N</em>(0, <em>t</em><sub>1</sub>)</span><br /></p>
-<p>and</p>
-<p><br /><span class="math display"><em>W</em><sub><em>t</em><sub>2</sub></sub> − <em>W</em><sub><em>t</em><sub>1</sub></sub> ∼ <em>N</em>(0, <em>t</em><sub>2</sub> − <em>t</em><sub>1</sub>)</span><br /></p>
-<p>The sum of two independent and normally distributed random variables is still a random variable, which is normally distributed with variance the sum of the variances of the aforementioned random variables: <br /><span class="math display"><em>W</em><sub><em>t</em><sub>2</sub></sub> ∼ <em>N</em>(0, <em>t</em><sub>2</sub>)</span><br /> As a result, <br /><span class="math display"><em>C</em><em>o</em><em>v</em>(<em>W</em><sub><em>t</em><sub>1</sub></sub>, <em>W</em><sub><em>t</em><sub>2</sub></sub>)=<em>E</em>(<em>W</em><sub><em>t</em><sub>1</sub></sub><em>W</em><sub><em>t</em><sub>2</sub></sub>)−<em>E</em>(<em>W</em><sub><em>t</em><sub>1</sub></sub>)<em>E</em>(<em>W</em><sub><em>t</em><sub>2</sub></sub>)=<em>E</em>(<em>W</em><sub><em>t</em><sub>1</sub></sub><em>W</em><sub><em>t</em><sub>2</sub></sub>)=<em>E</em>(<em>W</em><sub><em>t</em><sub>1</sub></sub>(<em>W</em><sub><em>t</em><sub>1</sub></sub> + (<em>W</em><sub><em>t</em><sub>2</sub></sub> − <em>W</em><sub><em>t</em><sub>1</sub></sub>)) = <em>E</em>((<em>W</em><sub><em>t</em><sub>1</sub></sub>)<sup>2</sup>)+<em>E</em>((<em>W</em><sub><em>t</em><sub>1</sub></sub>(<em>W</em><sub><em>t</em><sub>2</sub></sub> − <em>W</em><sub><em>t</em><sub>1</sub></sub>)) = <em>E</em>((<em>W</em><sub><em>t</em><sub>1</sub></sub>)<sup>2</sup>)+<em>E</em>(((<em>W</em><sub><em>t</em><sub>1</sub></sub> − <em>W</em><sub><em>t</em><sub>0</sub></sub>)(<em>W</em><sub><em>t</em><sub>2</sub></sub> − <em>W</em><sub><em>t</em><sub>1</sub></sub>)) = <em>E</em>((<em>W</em><sub><em>t</em><sub>1</sub></sub>)<sup>2</sup>)=<em>V</em><em>a</em><em>r</em>(<em>W</em><sub><em>t</em><sub>1</sub></sub>)=<em>t</em><sub>1</sub></span><br /></p>
+<p>We wrote each of the random variables of the process as an increment. Those increments are independent (ii) and normally distributed (iii), with zero mean and variance that is equal to the time interval between the two random variables.</p>
+<p>So, if <span class="math inline"><em>W</em><sub><em>t</em><sub>0</sub></sub> = 0</span>, <span class="math inline"><em>W</em><sub><em>t</em><sub>1</sub></sub> ∼ <em>N</em>(0, <em>t</em><sub>1</sub>)</span> and <span class="math inline"><em>W</em><sub><em>t</em><sub>2</sub></sub> − <em>W</em><sub><em>t</em><sub>1</sub></sub> ∼ <em>N</em>(0, <em>t</em><sub>2</sub> − <em>t</em><sub>1</sub>)</span></p>
+<p>The sum of two independent and normally distributed random variables is still a random variable, which is normally distributed with variance the sum of the variances of the aforementioned random variables: <br /><span class="math display"><em>W</em><sub><em>t</em><sub>2</sub></sub> ∼ <em>N</em>(0, <em>t</em><sub>2</sub>)</span><br /></p>
+<p>As a result, <br /><span class="math display"><em>C</em><em>o</em><em>v</em>(<em>W</em><sub><em>t</em><sub>1</sub></sub>, <em>W</em><sub><em>t</em><sub>2</sub></sub>)=<em>E</em>(<em>W</em><sub><em>t</em><sub>1</sub></sub><em>W</em><sub><em>t</em><sub>2</sub></sub>)−<em>E</em>(<em>W</em><sub><em>t</em><sub>1</sub></sub>)<em>E</em>(<em>W</em><sub><em>t</em><sub>2</sub></sub>)=<em>E</em>(<em>W</em><sub><em>t</em><sub>1</sub></sub><em>W</em><sub><em>t</em><sub>2</sub></sub>)=<em>E</em>(<em>W</em><sub><em>t</em><sub>1</sub></sub>(<em>W</em><sub><em>t</em><sub>1</sub></sub> + (<em>W</em><sub><em>t</em><sub>2</sub></sub> − <em>W</em><sub><em>t</em><sub>1</sub></sub>)) = <em>E</em>((<em>W</em><sub><em>t</em><sub>1</sub></sub>)<sup>2</sup>)+<em>E</em>((<em>W</em><sub><em>t</em><sub>1</sub></sub>(<em>W</em><sub><em>t</em><sub>2</sub></sub> − <em>W</em><sub><em>t</em><sub>1</sub></sub>)) = <em>E</em>((<em>W</em><sub><em>t</em><sub>1</sub></sub>)<sup>2</sup>)+<em>E</em>(((<em>W</em><sub><em>t</em><sub>1</sub></sub> − <em>W</em><sub><em>t</em><sub>0</sub></sub>)(<em>W</em><sub><em>t</em><sub>2</sub></sub> − <em>W</em><sub><em>t</em><sub>1</sub></sub>)) = <em>E</em>((<em>W</em><sub><em>t</em><sub>1</sub></sub>)<sup>2</sup>)=<em>V</em><em>a</em><em>r</em>(<em>W</em><sub><em>t</em><sub>1</sub></sub>)=<em>t</em><sub>1</sub></span><br /></p>
 <p>Analogously, if <span class="math inline">0 = <em>t</em><sub>0</sub> &lt; <em>t</em><sub>2</sub> &lt; <em>t</em><sub>1</sub></span>, then <span class="math inline"><em>C</em><em>o</em><em>v</em>(<em>W</em><sub><em>t</em><sub>1</sub></sub>, <em>W</em><sub><em>t</em><sub>2</sub></sub>)=<em>E</em>(<em>W</em><sub><em>t</em><sub>2</sub><sup>2</sup></sub>)=<em>t</em><sub>2</sub></span>.</p>
 <p>Consequently, <span class="math inline"><em>C</em><em>o</em><em>v</em>(<em>W</em><sub><em>t</em><sub>1</sub></sub>, <em>W</em><sub><em>t</em><sub>2</sub></sub>)=<em>m</em><em>i</em><em>n</em>(<em>t</em><sub>1</sub>, <em>t</em><sub>2</sub>)</span>.</p>
 </body>
