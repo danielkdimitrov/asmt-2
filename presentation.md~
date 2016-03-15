@@ -1,0 +1,20 @@
+
+
+
+
+
+<!--
+
+pandoc -s --mathjax --slide-level 2 --toc --toc-depth=1 -t revealjs presentation.md -V theme=solarized -o presentation.html
+
+pandoc --slide-level 2 --toc --toc-depth=1 -t beamer presentation.md -V theme:Montpellier -o presentation.pdf
+
+
+
+
+new slide:
+
+------------
+
+
+-->

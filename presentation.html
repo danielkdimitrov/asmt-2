@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Adam Smith" />
+  <title>Title Presentation</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="reveal.js/css/reveal.min.css"/>
+    <style type="text/css">code{white-space: pre;}</style>
+    <link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
+  <link rel="stylesheet" media="print" href="reveal.js/css/print/pdf.css" />
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">MathJax.Hub.Queue(["Typeset",MathJax.Hub]);</script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+    <h1 class="title">Title Presentation</h1>
+    <h2 class="author">Adam Smith</h2>
+    <h3 class="date">Tilec, Tilburg University</h3>
+</section>
+<section id="TOC">
+<ul>
+<li><a href="#/introduction">Introduction</a></li>
+<li><a href="#/a-new-heading">A new heading</a></li>
+</ul>
+</section>
+
+<section><section id="introduction" class="titleslide slide level1"><h1><a href="#/introduction">Introduction</a></h1></section><section id="motivation" class="slide level2">
+<h1><a href="#/motivation">motivation</a></h1>
+<ul>
+<li>Why are we interested in the wealth of nations?</li>
+<li>seems a bit boring to me</li>
+</ul>
+</section><section class="slide level2">
+
+<ul>
+<li>Ah, we have a new slide here</li>
+<li>we can type latex <span class="math">\(x^2_1 + x_2^2 = x_3^2\)</span></li>
+<li>or do an equation environment:</li>
+</ul>
+<p><span class="math">\[
+\sum_{i=1}^n x_i^2
+\]</span></p>
+</section></section>
+<section><section id="a-new-heading" class="titleslide slide level1"><h1><a href="#/a-new-heading">A new heading</a></h1></section><section id="slide-title" class="slide level2">
+<h1><a href="#/slide-title">slide title</a></h1>
+<ul>
+<li><p>and we have another slide</p></li>
+<li><p>and nested bullets</p></li>
+<li><p>the next slide contains a figure</p></li>
+</ul>
+</section><section class="slide level2">
+
+<figure>
+<img src="images/quality1.png" />
+</figure>
+</section><section class="slide level2">
+
+<ul>
+<li>we can also do a figure from the web</li>
+</ul>
+</section><section class="slide level2">
+
+<figure>
+<img src="http://static01.nyt.com/images/2015/07/24/science/24planet2/24planet2-master675.jpg" />
+</figure>
+</section><section id="conclusion" class="slide level2">
+<h1><a href="#/conclusion">Conclusion</a></h1>
+<ul>
+<li>markdown is a lot of fun</li>
+<li>use a terminal (like the command prompt in Windows) and navigate (using &quot;cd&quot; --for &quot;change directory&quot;) to the directory with this presentation</li>
+<li>to get the html, type the following on one line:</li>
+</ul>
+<pre><code>pandoc -s --mathjax --slide-level 2 --toc --toc-depth=1 -t revealjs
+presentation.md -V theme=solarized -o presentation.html</code></pre>
+<ul>
+<li>if you want a beamer/latex pdf, type:</li>
+</ul>
+<pre><code>pandoc --slide-level 2 --toc --toc-depth=1 -t beamer
+presentation.md -V theme:Montpellier -o presentation.pdf</code></pre>
+</section></section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.min.js"></script>
+
+  <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        theme: 'solarized', // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+//          { src: 'reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; }, }
+//          { src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+]});
+    </script>
+  </body>
+</html>
